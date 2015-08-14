@@ -1,1 +1,10 @@
 c:\users\denis\documents\visual studio 2012\Projects\Slicer\Slicer\bin\Debug\Slicer.exe.config
+C:\git\Slicer\Slicer\bin\Debug\Slicer.exe.config
+C:\git\Slicer\Slicer\bin\Debug\Slicer.exe
+C:\git\Slicer\Slicer\bin\Debug\Slicer.pdb
+C:\git\Slicer\Slicer\obj\Debug\Slicer.csprojResolveAssemblyReference.cache
+C:\git\Slicer\Slicer\obj\Debug\Slicer.Properties.Resources.resources
+C:\git\Slicer\Slicer\obj\Debug\Slicer.csproj.GenerateResource.Cache
+C:\git\Slicer\Slicer\obj\Debug\Slicer.exe
+C:\git\Slicer\Slicer\obj\Debug\Slicer.pdb
+C:\git\Slicer\Slicer\obj\Debug\Slicer.TestSlicer.resources
