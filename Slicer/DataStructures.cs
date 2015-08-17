@@ -43,6 +43,12 @@ namespace Slicer
             v = Point.Subtract(point2,point1);
         }
 
+        /// <summary>
+        /// This function calculates the intersection point between a plane and a line. Replace the x,y,z components of the line equation into the plane equation and solve for t, then replace t in the line equation to get the x,y,z
+        /// </summary>
+        /// <param name="line"></param>
+        /// <param name="plane"></param>
+        /// <returns></returns>
         public static Point IntersectionLinePlane(Line line, Plane plane)
         {// could write in one line but it'd be too hard to debug, or read!
             // replace the x,y,z components of the line equation into the plane equation and solve for t
@@ -108,6 +114,16 @@ namespace Slicer
             this.d = d;
         }
 
+        /// <summary>
+        /// this function finds the normal equation for a plane from 3 points inputted. Using 3 points, we can generate 2 lines and by performing the cross-product and obtaining a vector normal to the plane. Then we can solve the normal equation for "d" using one of the points.
+        /// </summary>
+        /// <param name="point1"></param>
+        /// <param name="point2"></param>
+        /// <param name="point3"></param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="d"></param>
         public void NormalEquation(Point point1,Point point2,Point point3, out double a, out double b, out double c, out double d)
         {   // formula for getting the normal equation of a plane in which (a,b,c) is the vector normal to the plane
             // this is the cross-product of two of the lines defined by the 3 points
@@ -124,7 +140,12 @@ namespace Slicer
             d = -(a * point1.x + b * point1.y + c * point1.z);
         }
 
-        // some methods to get sides and distances
+        /// <summary>
+        /// this is the same as the distance but we only want the sign so we skip the division part which is time consuming
+        /// </summary>
+        /// <param name="point"></param>
+        /// <param name="plane"></param>
+        /// <returns></returns>
         public static bool SidePointPlane(Point point, Plane plane)
         {
             // side is a bit arbitrary because it depends on definition of the plane's normal vector
@@ -134,6 +155,12 @@ namespace Slicer
             return (plane.a * point.x + plane.b * point.y + plane.c * point.z + plane.d) >= 0; // return true if positive, false if negative
         }
 
+        /// <summary>
+        /// this function calculates th distance between a point and a plane. Using the normal equation, we plug the coordinates of the point and get the distance
+        /// </summary>
+        /// <param name="point"></param>
+        /// <param name="plane"></param>
+        /// <returns></returns>
         public double DistancePointPlane(Point point, Plane plane)
         {   // the equation is distance = (a*x0 + b*y0 + c*z0 + d)/sqrt(a*a + b*b + c*c)
             // split the equation in two for ease of reading
